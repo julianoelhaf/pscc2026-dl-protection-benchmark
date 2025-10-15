@@ -1,4 +1,4 @@
-# Comparison of Deep Learning Methods for Power System Protection
+# Comparison of Deep Learning Methods for Fault Analysis in Power System Protection
 
 > Repository accompanying our PSCC 2026 submission.  
 > **Status:** Work in progress – code and pretrained models will be released after acceptance.
@@ -7,7 +7,7 @@
 
 ## Overview
 
-This repository provides the framework, configuration templates, and documentation for a comprehensive benchmark of deep learning architectures applied to **power system protection** tasks.  
+This repository provides the framework, configuration templates, and documentation for a comprehensive benchmark of deep learning architectures applied to **fault analysis in power system protection** tasks.  
 The study systematically compares recurrent, convolutional, hybrid, and transformer-based models under identical experimental conditions.
 
 The benchmark covers four core protection tasks:
@@ -74,7 +74,7 @@ If you reference this work, please cite the corresponding paper:
 
 ```bibtex
 @inproceedings{oelhaf_pscc2026,
-  title     = {Comparison of Deep Learning Methods for Power System Protection},
+  title     = {Comparison of Deep Learning Methods for Fault Analysis in Power System Protection},
   author    = {Oelhaf, Julian and Ghosh, Tamoghna and Kordowich, Georg and Bergler, Christian and Maier, Andreas and Jäger, Johann and Bayer, Siming},
   booktitle = {24th Power Systems Computation Conference (PSCC)},
   year      = {2026},
