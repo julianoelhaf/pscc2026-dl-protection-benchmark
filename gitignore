@@ -1,0 +1,18 @@
+# Envs & caches
+.venv/
+.env
+__pycache__/
+.ipynb_checkpoints/
+
+# Data & results (keep out of git)
+data/
+results/
+
+# Artifacts & logs
+*.pt
+*.pth
+*.npz
+*.npy
+logs/
+mlruns/
+wandb/
