@@ -1,0 +1,9 @@
+defaults:
+  - _self_
+  - dataset: hv_double_line_90kv
+  - model: default
+  - tracking: default
+  - training: default
+  - window_extraction: default
+
+seed: 42

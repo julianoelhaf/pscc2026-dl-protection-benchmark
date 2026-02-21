@@ -1,107 +1,99 @@
-# Deep Learning Architectures for Fault Analysis in Power System Protection Under Varying Operating Conditions
+# Deep Learning Architectures for Fault Analysis in Power System Protection
 
-Official implementation accompanying the manuscript:
+This repository accompanies the article:
 
-**Julian Oelhaf, Georg Kordowich, Christian Bergler, Andreas Maier, Johann Jäger, Siming Bayer**
-
-*Deep Learning Architectures for Fault Analysis in Power System Protection Under Varying Operating Conditions*  
-Submitted to *Electric Power Systems Research (EPSR)*.
+**Deep Learning Architectures for Fault Analysis in Power System Protection Under Varying Operating Conditions**  
+Julian Oelhaf, Georg Kordowich, Christian Bergler, Andreas Maier, Johann Jäger, Siming Bayer  
+*Electric Power Systems Research (2026)*
 
 ---
 
 ## Overview
 
-This repository provides the implementation used in the systematic evaluation of deep learning architectures for fault analysis in transmission power systems.
+This work presents a systematic evaluation of deep learning architectures for transmission-level fault analysis under varying operating conditions.
 
-The study investigates four protection tasks:
+Four protection tasks are investigated:
 
-- **FD** - Fault Detection  
-- **FC** - Fault Classification  
-- **FLI** - Fault Line Identification  
-- **FL** - Fault Localization  
+- **Fault Detection (FD)**
+- **Fault Classification (FC)**
+- **Fault Line Identification (FLI)**
+- **Fault Localization (FL)**
 
-All models are trained and evaluated under identical preprocessing, cross-validation, and windowing conditions using EMT-simulated voltage and current waveforms.
+Nine neural network architectures are compared under identical preprocessing, windowing, and cross-validation conditions to enable controlled architectural assessment.
 
-The focus of this work is a controlled architectural comparison under varying operating conditions.
+The study focuses on how model structure influences accuracy, robustness, and inference time when operating on electromagnetic transient (EMT) voltage and current waveforms.
 
 ---
 
 ## Dataset
 
-Experiments are conducted on a publicly available EMT simulation dataset:
+Experiments are conducted using a publicly available EMT simulation dataset:
 
-- 9,022 simulated fault episodes  
-- 90 kV double-line transmission topology  
-- 6,400 Hz sampling frequency  
-- Eight protection relay measurement locations  
-- Domain-randomized operating conditions (line parameters, load levels, fault resistance, external grid strength)
-
-Dataset DOI:
-
+**Zenodo DOI:**  
 <https://doi.org/10.5281/zenodo.18418330>
 
-Please download the dataset from Zenodo and place it in the `data/` directory as described in `data/README.md`.
+The dataset contains:
+
+- 9,022 simulated fault scenarios  
+- 90 kV double-line transmission topology  
+- 6.4 kHz sampled voltage and current waveforms  
+- Eight protection relay measurement locations  
+- Domain-randomized operating conditions  
+
+Please download the dataset from Zenodo and configure the local dataset path as described below.
 
 ---
 
-## Evaluated Architectures
+## Reproducing the Experiments
 
-The following deep learning architectures are implemented:
+The repository provides the training and evaluation scripts used in the paper.
 
-- RNN  
-- LSTM  
-- GRU  
-- CNN  
-- Dilated CNN  
-- Temporal Convolutional Network (TCN)  
-- InceptionTime  
-- CNN-LSTM hybrid  
-- Temporal Fusion Transformer (TFT)
+After downloading the dataset, set the dataset directory in:
 
-All models are evaluated under identical training settings to enable controlled comparison.
-
----
-
-## Evaluation Protocol
-
-- 5-fold cross-validation (episode-wise split)  
-- Decision windows: 10-50 ms  
-- Metrics:
-  - Macro-F1 (FD, FC, FLI)
-  - Mean Absolute Error (FL)
-- Consistent preprocessing and normalization across tasks
-
-Detailed protocol description is provided in the manuscript.
-
----
-
-## Reproducing Experiments
-
-Example (Fault Detection):
-
-```bash
-python experiments/run_fd.py --config configs/fd.yaml
+```text
+config/dataset/hv_double_line_90kv.yaml
 ````
 
-Each protection task can be executed via the corresponding script in the `experiments/` directory.
+Example run:
+
+```bash
+python src/dl_fault_analysis/scripts/run_dl_experiment.py
+````
+
+Experiments are controlled via configuration files. All models and tasks evaluated in the paper can be reproduced using the provided configurations.
 
 ---
 
-## Hardware
+## Environment
 
-Original experiments were conducted on NVIDIA GPUs (RTX 2080 Ti / RTX 3080).
-Inference times may differ depending on hardware.
+- Python ≥ 3.10
+- PyTorch-compatible environment (GPU optional)
+
+Install via:
+
+```bash
+conda activate dl-fault-analysis && pip install -e .
+```
+
+---
+
+## Scope and Limitations
+
+The presented results are based on controlled EMT simulation of a fixed transmission topology with domain-randomized operating conditions.
+
+The study provides a comparative architectural analysis under consistent conditions.
+It does not claim universal generalization to unseen grid topologies or field-recorded data.
 
 ---
 
 ## Citation
 
-If you use this repository, please cite:
+If you use this work, please cite:
 
-```
+```bibtex
 @article{oelhaf2026dl,
   title={Deep Learning Architectures for Fault Analysis in Power System Protection Under Varying Operating Conditions},
-  author={Oelhaf, Julian and Kordowich, Georg and Bergler, Christian and Maier, Andreas and Jäger, Johann and Bayer, Siming},
+  author={Oelhaf, Julian and Kordowich, Georg and Bergler, Christian and Maier, Andreas and J\"{a}ger, Johann and Bayer, Siming},
   journal={Electric Power Systems Research},
   year={2026}
 }

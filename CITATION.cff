@@ -22,7 +22,7 @@ authors:
     given-names: Siming
     affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)
 
-repository-code: "https://github.com/julianoelhaf/dl-fault-analysis"
+repository-code: "https://github.com/julianoelhaf/dl_fault_analysis"
 
 keywords:
   - deep learning
