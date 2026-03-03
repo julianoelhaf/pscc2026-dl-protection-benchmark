@@ -1,8 +1,7 @@
-# Deep Learning Architectures for Fault Analysis in Power System Protection
-
+# Deep Learning Models for Fault Analysis in Power System Protection
 This repository accompanies the article:
 
-**Deep Learning Architectures for Fault Analysis in Power System Protection Under Varying Operating Conditions**  
+**Deep Learning Models for Fault Analysis in Power System Protection**  
 Julian Oelhaf, Georg Kordowich, Christian Bergler, Andreas Maier, Johann Jäger, Siming Bayer  
 *Electric Power Systems Research (2026)*
 
@@ -92,7 +91,7 @@ If you use this work, please cite:
 
 ```bibtex
 @article{oelhaf2026dl,
-  title={Deep Learning Architectures for Fault Analysis in Power System Protection Under Varying Operating Conditions},
+  title={Deep Learning Models for Fault Analysis in Power System Protection},
   author={Oelhaf, Julian and Kordowich, Georg and Bergler, Christian and Maier, Andreas and J\"{a}ger, Johann and Bayer, Siming},
   journal={Electric Power Systems Research},
   year={2026}
